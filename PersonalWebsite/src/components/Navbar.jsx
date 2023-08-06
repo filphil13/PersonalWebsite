@@ -3,12 +3,15 @@ function Navbar() {
 
 
     return (
-			<nav className='bg-color2 py-10 mb-12 flex justify-between'>
-				<h1 className='text-5xl text-color1 ml-10 '>Filipe Madureira</h1>
+			<nav className='fixed w-full h-[80px] bg-color2 border-2 border-black flex justify-between items-center px-4 '>
+				<div>
+					<h1 className='text-5xl font-semibold text-color1 ml-10 '>Filipe Madureira</h1>
+				</div>
+
 				<ul className='flex items-center'>
 					<li className='mx-2'>
 						<a 
-							className='bg-color3 text-black px- py-2 px-3 rounded-lg' 
+							className='bg-color3 border-2 text-xl font-semibold border-black text-black px-5 py-3 rounded-lg' 
 							href='#'
 							>
 							Resume
@@ -17,7 +20,7 @@ function Navbar() {
 
 					<li className='mx-2'>
 						<a 
-							className='bg-color4 text-black px- py-2 px-3 rounded-lg' 
+							className='bg-color4 border-2 text-xl font-semibold border-black text-black py-3 px-5 rounded-lg' 
 							href='#'
 							>
 							Projects
@@ -26,7 +29,7 @@ function Navbar() {
 
 					<li className='mx-2'>
 						<a 
-							className='bg-color5 text-black mr-7 py-2 px-3 rounded-lg' 
+							className='bg-color5 border-2 text-xl font-semibold border-black text-black py-3 px-5 rounded-lg' 
 							href='#'
 							>
 							Contact

@@ -7,7 +7,7 @@ import './App.css'
 function App() {
 
   return (
-		<div className='min-h-screen bg-color1'>
+		<div className='min-h-screen bg-green-700'>
 			<Navbar/>
       <Introduction/>
       <Footer/>
