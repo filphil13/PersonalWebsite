@@ -1,17 +1,17 @@
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import Introduction from './components/Introduction'
+import Home from './components/Home'
 
 import './App.css'
 
 function App() {
 
   return (
-		<div className='min-h-screen bg-green-700'>
-			<Navbar/>
-      <Introduction/>
-      <Footer/>
-		</div>
+    <div>
+        <Navbar />
+		<Home />
+		<Footer />
+    </div>
   )
 }
 

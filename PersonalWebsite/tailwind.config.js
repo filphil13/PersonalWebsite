@@ -5,18 +5,18 @@ export default {
     "./src/*.{js,ts,jsx,tsx}",
     "./src/**/*.{js,ts,jsx,tsx}"
   ],
+  plugins: [require('daisyui')],
   theme: {
     extend: {
       colors:{
-        'color1':'#1F271B',
-        'color2':'#19647E',
-        'color3':'#28AFB0',
-        'color4':'#F4D35E',
-        'color5':'#EE964B',
+        'color1':'#000000',
+        'color2':'#14213d',
+        'color3':'#fca311',
+        'color4':'#e5e5e5',
+        'color5':'#ffffff',
       }
     },
     
   },
-  plugins: [],
 }
 
