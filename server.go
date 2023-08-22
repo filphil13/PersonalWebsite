@@ -13,7 +13,7 @@ func GetHome(c *gin.Context) {
 func main() {
 
 	router := gin.Default()
-	router.Use(static.Serve("/", static.LocalFile("./Front-End/Temperature-Monitor/dist/index.html", true)))
+	router.Use(static.Serve("/", static.LocalFile("./PersonalWebsite/dist/index.html", true)))
 
 
 	//FRONT-END ENDPOINTS
