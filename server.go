@@ -5,15 +5,11 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func GetHome(c *gin.Context) {
-	c.HTML(200, "index.html", nil)
-}
-
 // MAIN FUNCTION
 func main() {
 
 	router := gin.Default()
-	router.Use(static.Serve("/", static.LocalFile("./PersonalWebsite/dist", true)))
+	router.Use(static.Serve("/", static.LocalFile("/PersonalWebsite", true)))
 
 
 	//FRONT-END ENDPOINTS
