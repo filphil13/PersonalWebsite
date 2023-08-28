@@ -1,9 +1,10 @@
+/* eslint-disable react/no-unescaped-entities */
 import { HiArrowNarrowRight } from "react-icons/hi"
 function Home() {
 
 
     return ( 
-        <div name='home' className='w-full h-screen bg-[#001d3d] flex'>
+        <div name='home' className='max-w-full py-40 bg-[#001d3d] flex'>
         {/* Container */}
 			<div className='max-w-fit mx-auto px-8 flex flex-col mt-0 justify-center items-center h-full'>
 				<div>
