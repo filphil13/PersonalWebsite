@@ -16,7 +16,7 @@ func GetHome(c *gin.Context) {
 func main() {
 
 	router := gin.Default()
-	router.Use(static.Serve("/", static.LocalFile("./Front-End/PersonalWebsite/dist", true)))
+	router.Use(static.Serve("/", static.LocalFile("Front-End/PersonalWebsite/dist", true)))
 	router.Run()
 }
 
