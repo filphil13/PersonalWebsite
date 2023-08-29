@@ -9,7 +9,7 @@ import (
 func main() {
 
 	router := gin.Default()
-	router.Use(static.Serve("/", static.LocalFile("/PersonalWebsite/dist", true)))
+	router.Use(static.Serve("/", static.LocalFile("./PersonalWebsite/dist", true)))
 
 
 	router.Run()
