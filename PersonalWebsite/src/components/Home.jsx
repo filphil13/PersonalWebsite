@@ -4,9 +4,9 @@ function Home() {
 
 
     return ( 
-        <div name='home' className='max-w-full py-40 bg-[#001d3d] flex'>
+        <div name='home' className='max-w- py-40 bg-[#001d3d] flex'>
         {/* Container */}
-			<div className='max-w-fit mx-auto px-8 flex flex-col mt-0 justify-center items-center h-full'>
+			<div className='max-w-fit mx-auto flex flex-col justify-center items-center'>
 				<div>
 					<p className='text-pink-600'>Hi, my name is</p>
 					<h1 className='text-4xl sm:text-7xl font-bold text-[#ccd6f6]'>
@@ -31,7 +31,7 @@ function Home() {
 				</div>
 				<div className="pt-20">
 					<img 
-						className="border-2 border-black h-auto max-w-sm rounded-full " 
+						className="border-4  border-black h-auto w-auto md:max-w-sm rounded-full hover:scale-125 duration-200" 
 						src="/src/assets/ProfilePic2.jpg">
 					</img>
 				</div>

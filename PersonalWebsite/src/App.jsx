@@ -10,12 +10,12 @@ function App() {
 
 	return (
 		<>
-			<div className ="flex-row">
-				<  Navbar  />	
-				<	Home   />
-				< Projects />
-				<  Contact />
-				<  Footer  />
+			<  Navbar  />
+			<div>
+			<	Home   />
+			< Projects />
+			<  Contact />
+			<  Footer  />
 			</div>
 		</>
 	)

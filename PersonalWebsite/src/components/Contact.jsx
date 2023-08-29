@@ -5,8 +5,8 @@ function Contact() {
 			<section className="text-white body-font relative">
 			<div className="container px-5 py-24 mx-auto">
 				<div className="flex flex-col text-center w-full mb-12">
-					<h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">
-					Contact Us
+					<h1 className="text-4xl text-center sm:text-7xl font-bold text-[#ccd6f6]">
+					Contact Me
 					</h1>
 					<p className="lg:w-2/3 mx-auto leading-relaxed text-white">
 					Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical

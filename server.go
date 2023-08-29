@@ -12,13 +12,6 @@ func main() {
 	router.Use(static.Serve("/", static.LocalFile("/PersonalWebsite/dist", true)))
 
 
-	//FRONT-END ENDPOINTS
-
 	router.Run()
 }
 
-//
-//
-//
-//
-//
