@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 
+	"github.com/gin-gonic/contrib/static"
 	"github.com/gin-gonic/gin"
 )
 
@@ -15,8 +16,7 @@ func GetHome(c *gin.Context) {
 func main() {
 
 	router := gin.Default()
-	router.LoadHTMLGlob("./Front-End/PersonalWebsite/dist/*.html")
-	router.GET("/", GetHome)
+	router.Use(static.Serve("/", static.LocalFile("./Front-End/PersonalWebsite/dist", true)))
 	router.Run()
 }
 
