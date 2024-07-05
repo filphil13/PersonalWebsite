@@ -1,7 +1,7 @@
 
-<div class='font-mono w-full h-[80px] fixed bg-[#000814] flex justify-between items-center px-4 mb-'>
+<nav class='font-mono w-full h-[80px] bg-[#000814] flex justify-between items-center px-4 mb-'>
 	<div>
-		<h1 class='text-5xl  text-color5 ml-10 '>FM</h1>
+		<h1 class='text-5xl text-[#8892b0] ml-10 '>FM</h1>
 	</div>
 
 	<div class="hidden md:inline-flex items-center">
@@ -18,6 +18,4 @@
 			Cool Shit
 		</button>
 	</div>
-
-	
-</div>
+</nav>

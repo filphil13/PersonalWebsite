@@ -5,13 +5,15 @@
 	import Home from "./lib/Home.svelte";
 	import Navbar from "./lib/Navbar.svelte";
 	import Projects from "./lib/Projects.svelte";
+    import Work from "./lib/Work.svelte";
 
 </script>
 
-<main>
+<main class="bg-[#001d3d]">
 	<Navbar />
 	<Home />
 	<Projects />
+	<Work />
 	<Contact />
 	<Footer />
 </main>

@@ -1,4 +1,4 @@
-<div class='max-w- py-40 bg-[#001d3d] flex'>
+<div class='max-w py-10 bg-[#001d3d] flex sm:px-5'>
         <div class='max-w-fit mx-auto flex flex-col justify-center items-center'>
             <div>
                 <p class='text-pink-600'>Hi, my name is</p>
@@ -24,7 +24,7 @@
             </div>
             <div class="pt-20">
                 <img 
-                    class="border-4  border-black h-auto w-auto md:max-w-sm rounded-full hover:scale-125 duration-200" 
+                    class="border-4  border-black h-auto w-auto md:max-w-sm sm:max-w-xs rounded-full hover:scale-125 duration-200" 
                     src="/src/assets/ProfilePic2.jpg"
                     alt="Profile Picture of Filipe Madureira"
                     aria-hidden="true"

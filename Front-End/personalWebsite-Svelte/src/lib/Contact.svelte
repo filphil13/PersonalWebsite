@@ -1,4 +1,4 @@
-<div class="bg-[#001d3d]">
+<div id='contact' class="bg-[#001d3d]">
     <section class="text-white body-font relative">
     <div class="container px-5 py-24 mx-auto">
         <div class="flex flex-col text-center w-full mb-12">
