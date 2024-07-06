@@ -9,23 +9,23 @@
 
 <div class="bg-[#001d3d] grid lg:grid-cols-3 sm:grid-cols-1 place-items-center">
     <ProjectCard 
-        projectName="NASA Daily Wallpaper" 
-        projectDescription="Description 1" 
+        projectName="NASA Daily Wallpaper"
+        projectDescription="This project is a wallpaper changer that fetches the daily astronomy picture from the NASA API and sets it as your desktop wallpaper. It uses the NASA Daily Wallpaper API to retrieve the image and then uses system-specific commands to set the image as the wallpaper."
         imgSrc="./src/assets/NASAWallpaperCard.png"
-        url=""
+        url="https://github.com/filphil13/NASA-Daily-Wallpaper"
     />
     
     <ProjectCard 
         projectName="Temperature Monitoring System" 
-        projectDescription="Description 2" 
+        projectDescription="Back-end server for temperature monitoring sensors. It is designed to receive temperature data from sensors and provide a centralized platform for monitoring and analyzing the collected data." 
         imgSrc="./src/assets/NASAWallpaperCard.png"
-        url = ""
+        url = "https://github.com/filphil13/TempMonitor-Server"
     />
     
     <ProjectCard 
         projectName="Temperature Monitoring Device" 
-        projectDescription="Description 3" 
+        projectDescription="TempMonitor-Device is a temperature and humidity monitoring device built for refrigeration units. It uses a DHT sensor to read temperature and humidity data, and sends this data to a server via HTTP POST requests." 
         imgSrc="./src/assets/NASAWallpaperCard.png"
-        url = ""
+        url = "https://github.com/filphil13/TempMonitor-Device"
     />
 </div>
