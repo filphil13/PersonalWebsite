@@ -4,7 +4,8 @@
     const sendEmail = (e) => {
         e.preventDefault()
 
-        emailjs.sendForm('service_1q7z5q9', 'template_1q7z5q9', e.target, 'user_1q7z5q9')
+        emailjs.sendForm('contact_us', 'contact_us_form', e.target, 
+        { publicKey: 'TCQgDxU8ohN4ocHE9'})
             .then((result) => {
                 console.log(result.text)
             }, (error) => {
@@ -27,7 +28,7 @@
             </p>
         </div>
         <div class="lg:w-1/2 md:w-2/3 mx-auto">
-            <div class="flex flex-wrap -m-2">
+            <form on:submit|preventDefault={sendEmail} class="flex flex-wrap -m-2">
                 <div class="p-2 w-1/2">
                     <div class="relative">
                         <label for="name" class="leading-7 text-sm text-white">
@@ -43,6 +44,7 @@
                         />
                     </div>
                 </div>
+
                 <div class="p-2 w-1/2">
                     <div class="relative">
                         <label
@@ -59,6 +61,7 @@
                         />
                     </div>
                 </div>
+
                 <div class="p-2 w-full">
                     <div class="relative">
                         <label
@@ -78,7 +81,7 @@
                     <button
                         type="submit"
                         class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                        Button
+                        Submit
                     </button>
                 </div>
                 <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
@@ -145,7 +148,7 @@
                     </a>
                     </span>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </section>
