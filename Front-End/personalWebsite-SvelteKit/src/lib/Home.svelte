@@ -1,4 +1,6 @@
 <script>
+    import profilePic from '$lib/images/ProfilePic.jpg';
+
     function scrollIntoView({target}){
         const id = target.getAttribute('href').slice(1);
         const element = document.getElementById(id);
@@ -33,7 +35,7 @@
             <div class="pt-20">
                 <img 
                     class="border-4  border-black h-auto w-auto md:max-w-sm sm:max-w-xs rounded-full hover:scale-125 duration-200" 
-                    src="../lib/"
+                    src="{profilePic}"
                     alt="Profile Picture of Filipe Madureira"
                     aria-hidden="true"
                 >
