@@ -1,8 +1,6 @@
 <script>
-	import { onMount } from "svelte";
-    import p5 from "p5";
+    import P5 from 'p5-svelte'
 
-    let canvas
 
     class Grid {
         initialize(width, height) {
@@ -57,54 +55,57 @@
         }
 }
 
-onMount(() => {
-    new p5((p) => {
-        const SAND_COLOR = "hsl(42, 100%, 50%)";
-        const BACKGROUND_COLOR = "hsl(42, 100%, 90%)";
-        const WIDTH = 800;
-        const HEIGHT = 800;
-        const GRID_SIZE = 10;
+        const sketch = (p5) => {
+            let grid = new Grid();
 
-        let grid = new Grid();
-        grid.initialize(WIDTH / GRID_SIZE, HEIGHT / GRID_SIZE);
+            const SAND_COLOUR = "hsl(42, 100%, 50%)";
+            const BACKGROUND_COLOUR = "hsl(42, 100%, 90%)";
+            const WIDTH = 800;
+            const HEIGHT = 800;
+            const GRID_SIZE = 10;
+            
+            p5.setup = () => {
+                p5.createCanvas(WIDTH, HEIGHT);
+                p5.colorMode(p5.HSL);
+                p5.background(BACKGROUND_COLOUR);
+                grid = new Grid();
+                grid.initialize(WIDTH / GRID_SIZE, HEIGHT / GRID_SIZE);
+            };
 
-        p.setup = () => {
-            canvas = p.createCanvas(WIDTH, HEIGHT);
-            p.colorMode(p.HSL);
-            p.background(BACKGROUND_COLOR);
+            p5.draw = () => {
+                grid.update();
+                grid.grid.forEach((colour, index) => {
+                    setPixel(p5, index, colour || BACKGROUND_COLOUR);
+                });
+            };
+
+            p5.mouseClicked = () => {
+                const x = p5.floor(p5.mouseX / GRID_SIZE);
+                const y = p5.floor(p5.mouseY / GRID_SIZE);
+                let colour = varyColour(p5, SAND_COLOUR);
+                grid.set(x, y, colour);
+            };
+
+
+            function setPixel(p, index, colour) {
+                const x = (index % grid.width) * GRID_SIZE;
+                const y = p.floor(index / grid.width) * GRID_SIZE;
+                p.fill(colour);
+                p.noStroke();
+                p.rect(x, y, GRID_SIZE, GRID_SIZE);
+            };
+            
+            function varyColour(p, colour) {
+                let hue = p.floor(p.hue(colour));
+                let saturation = p.saturation(colour) + p.floor(p.random(-20, 0));
+                saturation = p.constrain(saturation, 0, 100);
+                let lightness = p.lightness(colour) + p.floor(p.random(-10, 10));
+                lightness = p.constrain(lightness, 0, 100);
+                return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+            };
         };
-
-        p.draw = () => {
-            grid.update();
-            grid.grid.forEach((color, index) => {
-                setPixel(p, index, color || BACKGROUND_COLOR);
-            });
-        };
-
-        function setPixel(p, index, color) {
-            const x = (index % grid.width) * GRID_SIZE;
-            const y = p.floor(index / grid.width) * GRID_SIZE;
-            p.fill(color);
-            p.noStroke();
-            p.rect(x, y, GRID_SIZE, GRID_SIZE);
-        }
-
-        p.onLeftClick = (x, y) => {
-            let color = varyColor(p, SAND_COLOR);
-            grid.set(x, y, color);
-        };
-
-        function varyColor(p, color) {
-            let hue = p.floor(p.hue(color));
-            let saturation = p.saturation(color) + p.floor(p.random(-20, 0));
-            saturation = p.constrain(saturation, 0, 100);
-            let lightness = p.lightness(color) + p.floor(p.random(-10, 10));
-            lightness = p.constrain(lightness, 0, 100);
-            return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
-        }
-})
-}, canvas) 
+        
 </script>
 
 <h1> SAND SIMULATOR </h1>
-<canvas></canvas>
+<P5 {sketch} />
