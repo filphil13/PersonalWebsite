@@ -1,3 +1,7 @@
+<script>
+	import {page} from '$app/stores';
+</script>
+
 
 <nav class='font-mono w-full h-[80px] bg-[#000814] flex justify-between items-center px-4 mb-'>
 	<div>
@@ -14,8 +18,8 @@
 		<button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4">
 			Contact
 		</button>
-		<button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r">
-			Cool Shit
+		<button aria-current={$page.url.pathname === '/coolShit' ? 'page' : undefined} class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r">
+			<a href="/coolShit"> Cool Shit</a>
 		</button>
 	</div>
 </nav>
