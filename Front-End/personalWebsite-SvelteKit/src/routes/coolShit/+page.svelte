@@ -60,9 +60,10 @@
 
             const SAND_COLOUR = "hsl(42, 100%, 50%)";
             const BACKGROUND_COLOUR = "hsl(42, 100%, 90%)";
-            const WIDTH = 800;
+            const WIDTH = p5.displayWidth;
             const HEIGHT = 800;
             const GRID_SIZE = 10;
+            const SAND_SIZE = 2
             
             p5.setup = () => {
                 p5.createCanvas(WIDTH, HEIGHT);
@@ -75,32 +76,48 @@
             p5.draw = () => {
                 grid.update();
                 grid.grid.forEach((colour, index) => {
-                    setPixel(p5, index, colour || BACKGROUND_COLOUR);
+                    setPixel(index, colour || BACKGROUND_COLOUR);
                 });
             };
 
-            p5.mouseClicked = () => {
+            
+            p5.mouseDragged = () => {
                 const x = p5.floor(p5.mouseX / GRID_SIZE);
                 const y = p5.floor(p5.mouseY / GRID_SIZE);
-                let colour = varyColour(p5, SAND_COLOUR);
-                grid.set(x, y, colour);
+                let colour = varyColour(SAND_COLOUR);
+
+                let matrix = SAND_SIZE;
+                let extent = p5.floor(matrix / 2);
+
+                for (let i = -extent; i <= extent; i++) 
+                {
+                    for (let j = -extent; j <= extent; j++) 
+                    {
+                        if (p5.random(1) < 0.75) 
+                        {
+                            let col = x + i;
+                            let row = y + j;
+                            grid.set(col, row, colour);
+                        }
+                    }
+                }
             };
 
 
-            function setPixel(p, index, colour) {
+            function setPixel(index, colour) {
                 const x = (index % grid.width) * GRID_SIZE;
-                const y = p.floor(index / grid.width) * GRID_SIZE;
-                p.fill(colour);
-                p.noStroke();
-                p.rect(x, y, GRID_SIZE, GRID_SIZE);
+                const y = p5.floor(index / grid.width) * GRID_SIZE;
+                p5.noStroke();
+                p5.fill(colour);
+                p5.square(x, y, 10);
             };
             
-            function varyColour(p, colour) {
-                let hue = p.floor(p.hue(colour));
-                let saturation = p.saturation(colour) + p.floor(p.random(-20, 0));
-                saturation = p.constrain(saturation, 0, 100);
-                let lightness = p.lightness(colour) + p.floor(p.random(-10, 10));
-                lightness = p.constrain(lightness, 0, 100);
+            function varyColour(colour) {
+                let hue = p5.floor(p5.hue(colour));
+                let saturation = p5.saturation(colour) + p5.floor(p5.random(-20, 0));
+                saturation = p5.constrain(saturation, 0, 100);
+                let lightness = p5.lightness(colour) + p5.floor(p5.random(-10, 10));
+                lightness = p5.constrain(lightness, 0, 100);
                 return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
             };
         };
