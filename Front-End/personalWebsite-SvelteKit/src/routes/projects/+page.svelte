@@ -1,6 +1,6 @@
 <script>
-    import ProjectCard from "./Project-Card.svelte";
-    import NasaPic from "../lib/images/NASAWallpaperCard.png"
+    import ProjectCard from "../../lib/Project-Card.svelte";
+    import NasaPic from "../../lib/images/NASAWallpaperCard.png"
 
 </script>
 

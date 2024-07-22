@@ -1,6 +1,5 @@
 <script>
 	import Home from '../lib/Home.svelte';
-	import Projects from '../lib/Projects.svelte';
 	import Work from '../lib/Work.svelte';
 	import Contact from '../lib/Contact.svelte';
 </script>
@@ -12,7 +11,6 @@
 
 <section>
 	<Home />
-	<Projects />
 	<Work />
 	<Contact />
 </section>

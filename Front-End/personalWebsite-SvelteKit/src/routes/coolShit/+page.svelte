@@ -1,69 +1,16 @@
 <script>
-    import P5 from 'p5-svelte'
+    import P5 from 'p5-svelte';
+    import Grid from './Grid.js';
 
-
-    class Grid {
-        initialize(width, height) {
-            this.width = width;
-            this.height = height;
-            this.grid = new Array(width * height).fill(0);
-        }
-
-        // Allow us to clear the canvas
-        clear() {
-            this.grid = new Array(this.width * this.height).fill(0);
-        }
-
-        // Allow us to set a specific particle
-        set(x, y, color) {
-            this.grid[y * this.width + x] = color;
-        }
-
-        // Allow us to swap two particles (or space)
-        swap(a, b) {
-            const temp = this.grid[a];
-            this.grid[a] = this.grid[b];
-            this.grid[b] = temp;
-        }
-
-        // Check if a particle exists in a space
-        isEmpty(index) {
-            return this.grid[index] === 0;
-        }
-
-        updatePixel(i) {
-            // Get the indices of the pixels directly below
-            const below = i + this.width;
-            const belowLeft = below - 1;
-            const belowRight = below + 1;
-
-            // If there are no pixels below, including diagonals, move it accordingly.
-            if (this.isEmpty(below)) {
-                this.swap(i, below);
-            } else if (this.isEmpty(belowLeft)) {
-                this.swap(i, belowLeft);
-            } else if (this.isEmpty(belowRight)) {
-                this.swap(i, belowRight);
-            }
-        }
-
-        update() {
-            // Draw from the end of the list to the beginning
-            for (let i = this.grid.length - this.width - 1; i > 0; i--) {
-                this.updatePixel(i);
-            }
-        }
-}
-
-        const sketch = (p5) => {
+    const sketch = (p5) => {
             let grid = new Grid();
 
             const SAND_COLOUR = "hsl(42, 100%, 50%)";
             const BACKGROUND_COLOUR = "hsl(42, 100%, 90%)";
             const WIDTH = 800;
             const HEIGHT = 800;
-            const GRID_SIZE = 10;
-            const SAND_SIZE = 2
+            const GRID_SIZE = 8;
+            const SAND_SIZE = 5;
             
 
             p5.setup = () => {
@@ -75,11 +22,11 @@
             };
             
             p5.draw = () => {
-                let start = p5.millis();
+                //let start = p5.millis();
                 grid.update();
-                let end = p5.millis();
-                let elapsed = end - start;
-                console.log("This took: " + elapsed + "ms.");       
+                //let end = p5.millis();
+                //let elapsed = end - start;
+                //console.log("This took: " + elapsed + "ms.");       
                 grid.grid.forEach((colour, index) => {
                     setPixel(index, colour || BACKGROUND_COLOUR);
                 });
@@ -127,7 +74,6 @@
                 return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
             };
         };
-        
 </script>
 
 <section class="py-10 sm:py-5 flex flex-col items-center bg-[#001d3d]">
