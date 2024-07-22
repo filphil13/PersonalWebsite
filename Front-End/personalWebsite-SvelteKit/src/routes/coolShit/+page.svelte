@@ -60,11 +60,12 @@
 
             const SAND_COLOUR = "hsl(42, 100%, 50%)";
             const BACKGROUND_COLOUR = "hsl(42, 100%, 90%)";
-            const WIDTH = p5.displayWidth;
+            const WIDTH = 800;
             const HEIGHT = 800;
             const GRID_SIZE = 10;
             const SAND_SIZE = 2
             
+
             p5.setup = () => {
                 p5.createCanvas(WIDTH, HEIGHT);
                 p5.colorMode(p5.HSL);
@@ -72,16 +73,21 @@
                 grid = new Grid();
                 grid.initialize(WIDTH / GRID_SIZE, HEIGHT / GRID_SIZE);
             };
-
+            
             p5.draw = () => {
+                let start = p5.millis();
                 grid.update();
+                let end = p5.millis();
+                let elapsed = end - start;
+                console.log("This took: " + elapsed + "ms.");       
                 grid.grid.forEach((colour, index) => {
                     setPixel(index, colour || BACKGROUND_COLOUR);
                 });
             };
-
+            
             
             p5.mouseDragged = () => {
+                p5.frameRate(60);
                 const x = p5.floor(p5.mouseX / GRID_SIZE);
                 const y = p5.floor(p5.mouseY / GRID_SIZE);
                 let colour = varyColour(SAND_COLOUR);
@@ -124,5 +130,11 @@
         
 </script>
 
-<h1> SAND SIMULATOR </h1>
-<P5 {sketch} />
+<section class="py-10 sm:py-5 flex flex-col items-center bg-[#001d3d]">
+
+    <h1 class="'text-4xl sm:text-7xl py-5 font-bold text-[#ccd6f6]" > 
+        SAND SIMULATOR 
+    </h1>
+        
+    <P5 {sketch} />
+</section>
