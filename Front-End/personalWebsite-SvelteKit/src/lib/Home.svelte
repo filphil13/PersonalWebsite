@@ -1,6 +1,8 @@
 <script>
-    import profilePic from '$lib/images/ProfilePic.jpg';
-    
+    //import profilePic from '$lib/images/ProfilePic.jpg';
+    import profilePic from '$lib/images/ProfilePic3.jpg';
+
+
 </script>
 <div class='py-10 bg-[#001d3d] flex sm:px-5'>
         <div class=' mx-auto flex flex-col justify-center items-center'>
@@ -24,13 +26,32 @@
                         </button>
                 </div>
             </div>
-            <div class="pt-20">
-                <img 
-                    class="border-4  border-black h-auto w-auto md:max-w-sm sm:max-w-xs rounded-full hover:scale-125 duration-200" 
-                    src="{profilePic}"
-                    alt="Profile Picture of Filipe Madureira"
-                    aria-hidden="true"
-                >
+            <div id="profilePic" class="pt-20">
             </div>
         </div>
     </div>
+
+    <style>
+        #profilePic {
+            background-image: url("./images/ProfilePic3.jpg");
+            width: 75%;
+            height: 500px;
+            max-width: 100%;
+            background-size: cover;
+            -webkit-background-position: center;
+            background-position: center center;
+            margin: 20px;
+            box-shadow: 0 5px 5px 5px rgba(13, 109, 253, 0.534);
+            animation: animate 5s ease-in-out infinite;
+            transition: all 1s ease-in-out;
+}
+
+@keyframes animate {
+    0%, 100%{
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    50%{
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+}
+    </style>
