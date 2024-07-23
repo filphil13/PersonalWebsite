@@ -12,10 +12,10 @@
 		<button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
 			Resume
 		</button>
-		<button aria-current={$page.url.pathname === '/projects' ? 'page' : undefined} class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4">
+		<button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4">
 			<a href="/projects"> Projects </a>
 		</button>
-		<button aria-current={$page.url.pathname === '/coolShit' ? 'page' : undefined} class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r">
+		<button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r">
 			<a href="/coolShit"> Cool Shit</a>
 		</button>
 	</div>

@@ -4,7 +4,7 @@
 
 </script>
 
-<h1 id="projects" class='bg-[#001d3d] text-4xl text-center sm:text-7xl font-bold text-[#ccd6f6] pb-10'>
+<h1 class='bg-[#001d3d] text-4xl text-center sm:text-7xl font-bold text-[#ccd6f6] pb-10'>
     Projects
 </h1>
 
